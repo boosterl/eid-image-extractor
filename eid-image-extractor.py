@@ -15,10 +15,7 @@ def get_national_number(eid_data):
 
 
 def eid_inserted(eid_data):
-    if (eid_data['success']):
-        return True
-    else:
-        return False
+    return eid_data['success']
 
 
 def write_image(eid_image_decode, national_number):
