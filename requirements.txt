@@ -1,0 +1,8 @@
+certifi==2023.5.7
+charset-normalizer==3.1.0
+eidreader==1.0.5
+idna==3.4
+PyKCS11==1.5.12
+requests==2.31.0
+swig==4.1.1
+urllib3==2.0.2
