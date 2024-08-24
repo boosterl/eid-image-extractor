@@ -1,4 +1,4 @@
-from eidreader.main import eid2dict
+from eidreader import eid2dict
 import base64
 
 
