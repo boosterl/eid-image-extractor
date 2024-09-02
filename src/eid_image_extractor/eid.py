@@ -1,6 +1,15 @@
 from eidreader import eid2dict
 import base64
 
+def extract_and_write_image():
+    eid_data = get_eid_data()
+    if (eid_inserted(eid_data)):
+        eid_image_decode_string = base64.b64decode(get_eid_image(eid_data))
+        national_number = get_national_number(eid_data)
+        write_image(eid_image_decode_string, national_number)
+    else:
+        print('E-ID card not inserted, or could not be read')
+
 
 def get_eid_data():
     return eid2dict()
@@ -25,10 +34,4 @@ def write_image(eid_image_decode, national_number):
 
 
 if __name__ == '__main__':
-    eid_data = get_eid_data()
-    if (eid_inserted(eid_data)):
-        eid_image_decode_string = base64.b64decode(get_eid_image(eid_data))
-        national_number = get_national_number(eid_data)
-        write_image(eid_image_decode_string, national_number)
-    else:
-        print('E-ID card not inserted, or could not be read')
+    extract_and_write_image()
