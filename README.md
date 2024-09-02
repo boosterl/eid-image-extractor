@@ -7,20 +7,14 @@ identity card.
 
 ## How to install
 
-All the Python dependencies this script has are declared in the
-`requirements.txt`-file. The script can be ran in a `venv`:
 ```
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+pip install eid-image-extractor
 ```
 
 ## How to use
 
-After you installed the dependencies, you can just run the script inside the
-active `venv`:
 ```
-python3 eid-image-extractor.py
+eid-image-extractor
 ```
 After this, if everything went well, you will see a file with the name
-```{NATIONAL_NUMBER}.jpeg``` next to the script.
+```{NATIONAL_NUMBER}.jpeg``` in the current directory.
