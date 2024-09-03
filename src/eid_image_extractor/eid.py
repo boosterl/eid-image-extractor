@@ -1,37 +1,35 @@
 from eidreader import eid2dict
+from eid_image_extractor import filesystem
 import base64
 
-def extract_and_write_image():
-    eid_data = get_eid_data()
-    if (eid_inserted(eid_data)):
-        eid_image_decode_string = base64.b64decode(get_eid_image(eid_data))
-        national_number = get_national_number(eid_data)
-        write_image(eid_image_decode_string, national_number)
-    else:
-        print('E-ID card not inserted, or could not be read')
+
+class EidNotInsertedException(Exception):
+    pass
 
 
-def get_eid_data():
-    return eid2dict()
+class Eid:
+    def __init__(self):
+        self.eid_data = self.get_eid_data()
+        if not self.eid_inserted():
+            raise EidNotInsertedException()
 
+    def eid_inserted(self):
+        return self.eid_data["success"]
 
-def get_eid_image(eid_data):
-    return eid_data['PHOTO_FILE']
+    def extract_and_write_image(self):
+        eid_image_decode_string = self.get_decoded_eid_image()
+        national_number = self.get_national_number()
+        filesystem.write_file(eid_image_decode_string, f"{national_number}.jpg")
+        return True
 
+    def get_eid_data(self):
+        return eid2dict()
 
-def get_national_number(eid_data):
-    return eid_data['national_number']
+    def get_eid_image(self):
+        return self.eid_data["PHOTO_FILE"]
 
+    def get_decoded_eid_image(self):
+        return base64.b64decode(self.get_eid_image())
 
-def eid_inserted(eid_data):
-    return eid_data['success']
-
-
-def write_image(eid_image_decode, national_number):
-    eid_image = open('{}.jpeg'.format(national_number), 'wb')
-    eid_image.write(eid_image_decode)
-    eid_image.close()
-
-
-if __name__ == '__main__':
-    extract_and_write_image()
+    def get_national_number(self):
+        return self.eid_data["national_number"]
