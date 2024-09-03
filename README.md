@@ -17,4 +17,4 @@ pip install eid-image-extractor
 eid-image-extractor
 ```
 After this, if everything went well, you will see a file with the name
-```{NATIONAL_NUMBER}.jpeg``` in the current directory.
+```{NATIONAL_NUMBER}.jpg``` in the current directory.
