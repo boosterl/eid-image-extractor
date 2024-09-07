@@ -16,12 +16,6 @@ class Eid:
     def eid_inserted(self):
         return self.eid_data["success"]
 
-    def extract_and_write_image(self):
-        eid_image_decode_string = self.get_decoded_eid_image()
-        national_number = self.get_national_number()
-        filesystem.write_file(eid_image_decode_string, f"{national_number}.jpg")
-        return True
-
     def get_eid_data(self):
         return eid2dict()
 
