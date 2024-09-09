@@ -1,6 +1,6 @@
-from eidreader import eid2dict
-from eid_image_extractor import filesystem
 import base64
+
+from eidreader import eid2dict
 
 
 class EidNotInsertedException(Exception):

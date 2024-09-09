@@ -25,6 +25,7 @@ keywords = ["identity", "eid", "beid"]
 dependencies = [
   "certifi>=2024.7.4",
   "charset-normalizer>=3.3.2",
+  "click>=8.1.7",
   "eidreader>=1.0.7",
   "idna>=3.8",
   "PyKCS11>=1.5.16",
