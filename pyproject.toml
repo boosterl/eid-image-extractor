@@ -23,14 +23,14 @@ classifiers = [
 ]
 keywords = ["identity", "eid", "beid"]
 dependencies = [
-  "certifi>=2024.7.4",
-  "charset-normalizer>=3.3.2",
+  "certifi>=2024.8.30",
+  "charset-normalizer>=3.4.0",
   "click>=8.1.7",
-  "eidreader>=1.0.7",
-  "idna>=3.8",
-  "PyKCS11>=1.5.16",
+  "eidreader>=1.0.8",
+  "idna>=3.10",
+  "PyKCS11>=1.5.17",
   "requests>=2.32.3",
-  "urllib3>=2.2.2",
+  "urllib3>=2.2.3",
 ]
 
 [project.urls]
