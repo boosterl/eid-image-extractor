@@ -20,7 +20,8 @@ def main(destination):
             f.write(eid_image_decoded_string)
         click.echo(f"Done! ✅")
     except EidNotInsertedException:
-        print("E-ID card not inserted, or could not be read ❌")
+        click.echo("E-ID card not inserted, or could not be read ❌", err=True)
+        exit(1)
 
 
 if __name__ == "__main__":
