@@ -9,8 +9,8 @@ def test_cli_help_flag():
 def test_cli_without_inserted_id():
     runner = CliRunner()
     result = runner.invoke(main, [])
-    assert "Reading E-ID data ⌛" in result.output
-    assert "E-ID card not inserted, or could not be read ❌" in result.output
+    assert "Reading E-ID data ⌛" in result.stdout
+    assert "E-ID card not inserted, or could not be read ❌" in result.stderr
     assert result.exit_code == 1
 
 def test_cli_non_existing_argument():
