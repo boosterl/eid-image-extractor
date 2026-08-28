@@ -24,8 +24,8 @@ classifiers = [
 ]
 keywords = ["identity", "eid", "beid"]
 dependencies = [
-  "click>=8.3.1",
-  "eidreader>=1.0.8",
+  "click>=8.5.0",
+  "eidreader>=1.0.10",
 ]
 
 [project.optional-dependencies]
