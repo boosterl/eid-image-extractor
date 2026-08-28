@@ -1,6 +1,9 @@
 import base64
+import logging
 
 from eidreader import eid2dict
+
+logger = logging.getLogger(__name__)
 
 
 class EidNotInsertedException(Exception):
@@ -17,7 +20,7 @@ class Eid:
         return self.eid_data["success"]
 
     def get_eid_data(self):
-        return eid2dict()
+        return eid2dict(logger=logger)
 
     def get_eid_image(self):
         return self.eid_data["PHOTO_FILE"]
